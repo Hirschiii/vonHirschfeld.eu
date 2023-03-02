@@ -40,7 +40,6 @@ to_blur.forEach((box, i) => {
             start: "+=133 25%",
             end: "+=200 10%",
             scrub: 0.2,
-            markers: true,
         }
     })
         .to(box, {
