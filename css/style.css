@@ -15,6 +15,7 @@
 body {
     background-color: var(--balck);
     color: white;
+    overflow-x: hidden;
 }
      
 a {
@@ -25,6 +26,7 @@ a {
 
 .header {
     width: 90vw;
+    position: fixed;
     margin: 5px 5vw;
     padding-bottom: 5px;
     display: flex;
@@ -46,15 +48,18 @@ a {
 }
 
 .body {
-    width: 100vw;
+    min-width: 100vw;
     height: 200vh;
     display: grid;
     place-items: center;
+    padding-top: 100vh;
 }
 
 .hero {
     position: fixed;
     top:25%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .line {
@@ -129,4 +134,8 @@ a {
 
 .fancy:hover > .letter:nth-child(10) {
   transform: translate(0%, 15%) rotate(-6deg);
+}
+
+.blur_top {
+    font-size: 7rem;
 }

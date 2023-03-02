@@ -19,12 +19,33 @@ enhance("hirschfeld_link");
 enhance("niklas_link");
 enhance("michael_link");
 
-window.addEventListener('scroll', function () {
-    let scale = 1 - window.scrollY / 400;
-    let translate = window.scrollY;
-    if (scale >= 0.4) {
-        document.getElementById('text').style.transform = "scale(" + scale + ")";
-        // document.getElementById('text').style.bottom = translate + "px";
+gsap.registerPlugin(ScrollTrigger);
+
+const header_tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".body",
+        start: "top top",
+        end: "+=200 -100",
+        toggleActions: "play none none reverse",
+        scrub: true,
     }
-    // document.getElementById("show_scrol").innerHTML = window.pageYOffset + "px"
+})
+.to(".hero", {scale: 1.4, filter: "blur(15px)" });
+
+const to_blur = gsap.utils.toArray('.blur_top');
+to_blur.forEach((box, i) => {
+    var fade_in = gsap.timeline({
+        scrollTrigger: {
+            trigger: box,
+            start: "+=133 25%",
+            end: "+=200 10%",
+            scrub: 0.2,
+            markers: true,
+        }
+    })
+        .to(box, {
+            opacity: 1,
+            filter: "blur(10px)"
+        })
 });
+
