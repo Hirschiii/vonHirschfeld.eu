@@ -24,27 +24,11 @@ a {
   cursor: inherit;
 }
 
-<<<<<<< Updated upstream
-.menu_top {
-    width: 50vw;
-    display: flex;
-    justify-content: space-evenly;
-    cursor: pointer;
-}
-
-.menu_top a:hover {
-    transition: .1s;
-    transform: scale(1.3) rotate(6deg);
-}
-
-=======
->>>>>>> Stashed changes
 .body {
     min-width: 100vw;
     height: 100vh;
     display: grid;
     place-items: center;
-    padding-top: 100vh;
 }
 
 .hero {
